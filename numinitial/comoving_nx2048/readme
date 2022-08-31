@@ -1,0 +1,2 @@
+baroclinic stokes corrections are computed by phase averaging.
+barotropic stokes corrections are computed using the theoretical solution. 

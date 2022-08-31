@@ -1,0 +1,2 @@
+bouss3m_wd.m: write output while running
+bouss3m_v4.m: correct hyperviscosity to make effect Grid Rynolds number equal 1.

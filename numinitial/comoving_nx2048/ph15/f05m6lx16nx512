@@ -1,0 +1,38 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=124GB
+#SBATCH --time=168:00:00
+#SBATCH --job-name=ph15
+#SBATCH --mail-type=END
+#SBATCH --mail-user=wd583@nyu.edu
+#SBATCH --output=slurm_%j.out
+
+module purge
+module load matlab/2017b
+
+mfile=wave_packet
+INPDIR=$HOME/bouss3m/numinitial/comoving_nx2048/ph15
+SRCDIR=$HOME/bouss3m/source
+RUNDIR=$SCRATCH/output_bouss3m/numinitial/comoving_nx2048/ph15
+mkdir -p $RUNDIR
+
+# create initial and output data
+#mkdir -p $RUNDIR/input
+
+# copy initial data
+#cd $SLURM_SUBMIT_DIR/input
+
+cd $RUNDIR
+cp $INPDIR/wave_packet.m .
+cp $INPDIR/input.mat .
+cp $SRCDIR/bous3m_wd2.m  .
+cp $SRCDIR/write_field.m .
+echo "Starting run at: `date`"
+
+#export PARLIB=/share/apps/openmpi/1.8.8/intel/lib
+matlab -nodisplay -r "$mfile; exit()" >runlog
+echo "Job finished at: `date`" 
+exit
+
