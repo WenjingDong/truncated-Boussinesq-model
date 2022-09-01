@@ -1,2 +1,3 @@
-bouss3m_wd.m: write output while running
-bouss3m_v4.m: correct hyperviscosity to make effect Grid Rynolds number equal 1.
+bouss3m_v4.m solves the Galerkin truncated three-dimensional rotating Boussinesq model for constant buoyancy frequency. The barotropic, first baroclinic, and second baroclinic modes are kept.
+The equations are diffused by hyperviscosity on velocity field.
+Time stepping method is AB3. 
