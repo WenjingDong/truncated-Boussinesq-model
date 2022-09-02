@@ -1,3 +1,7 @@
-bouss3m_v4.m solves the Galerkin truncated three-dimensional rotating Boussinesq model for constant buoyancy frequency. The barotropic, first baroclinic, and second baroclinic modes are kept.
+bouss3m_v4.m solves the Galerkin truncated three-dimensional rotating Boussinesq model for constant buoyancy frequency. 
+The barotropic, first baroclinic, and second baroclinic modes are kept.
 The equations are diffused by hyperviscosity on velocity field.
-Time stepping method is AB3. 
+Time stepping method is AB3.
+bouss3m_v4.m is the main solver. 
+k2g_: transforms a field from spectral space to physical space.
+g2k_: transforms a field from physical space to spectral space.
